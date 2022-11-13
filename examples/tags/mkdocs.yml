@@ -38,3 +38,5 @@ plugins:
 # Markdown extensions
 markdown_extensions:
   - attr_list
+  - toc:
+      permalink: true

@@ -23,9 +23,9 @@ Download example:
 Unzip the example, change to the folder and enter:
 
 ``` bash
-python -m venv venv && . ./venv/bin/activate
+python3 -m venv venv && . ./venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve
 ```
 
-  [Download]: https://download-directory.github.io?url=https://github.com/mkdocs-material/examples/tree/master/examples/tags
+  [Download]: https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/mkdocs-material/examples/tree/master/examples/tags
