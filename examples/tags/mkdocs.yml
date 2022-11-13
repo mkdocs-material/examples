@@ -25,9 +25,16 @@
 # Project information
 site_name: Example for tags
 
+# Repository
+repo_name: mkdocs-material/examples
+repo_url: https://github.com/mkdocs-material/examples
+edit_uri: edit/master/examples/tags/docs
+
 # Theme
 theme:
   name: material
+  features:
+    - navigation.expand
 
 # Plugins
 plugins:
@@ -37,6 +44,9 @@ plugins:
 
 # Markdown extensions
 markdown_extensions:
+  - admonition
   - attr_list
   - toc:
       permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences

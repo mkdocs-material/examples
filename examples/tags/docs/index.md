@@ -8,7 +8,7 @@ title: Overview
 
 - [Page 1] – Page with tags `foo` and `bar`
 - [Page 2] – Page with tags `bar` and `baz`
-- [Tags] – Tags overview
+- [Tags] – Tags index
 
   [Page 1]: example/page-1.md
   [Page 2]: example/page-1.md
