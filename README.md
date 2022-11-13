@@ -1,3 +1,7 @@
-# Examples for Material for MkDocs
+# Examples
 
-Work in progress.
+- [Tags]
+- [Tags with icons]
+
+  [Tags]: packages/tags/
+  [Tags with icons]: packages/tags-with-icons/

@@ -56,7 +56,6 @@ extra:
 
 # Markdown extensions
 markdown_extensions:
-  - admonition
   - attr_list
   - toc:
       permalink: true

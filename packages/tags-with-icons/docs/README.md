@@ -1,12 +1,12 @@
 ---
-title: How to
+title: Overview
 ---
 
 # Using tags with icons
 
 This example includes the following pages:
 
-- [Page 1] – Page with tags [HTML][HTML] and [JavaScript]
+- [Page 1] – Page with tags [HTML] and [JavaScript]
 - [Page 2] – Page with tags [JavaScript] and [CSS]
 - [Tags] – Tags index
 
