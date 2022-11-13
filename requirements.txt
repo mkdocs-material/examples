@@ -23,7 +23,7 @@ mkdocs-material
 cairosvg
 pillow
 
-# Recommended plugins
+# Requirements for plugins
 mkdocs-git-committers-plugin-2
 mkdocs-git-revision-date-localized-plugin
 mkdocs-glightbox
