@@ -23,7 +23,7 @@
 # -----------------------------------------------------------------------------
 
 # Project information
-site_name: Example for tags
+site_name: Using tags
 
 # Repository
 repo_name: mkdocs-material/examples
@@ -34,13 +34,13 @@ edit_uri: edit/master/examples/tags/docs
 theme:
   name: material
   features:
-    - navigation.expand
+    - navigation.sections
 
 # Plugins
 plugins:
   - search
   - tags:
-      tags_file: example/tags.md
+      tags_file: pages/tags.md
 
 # Markdown extensions
 markdown_extensions:

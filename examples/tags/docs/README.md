@@ -1,29 +1,26 @@
 ---
-title: Overview
+title: How to
 ---
 
-# Example for tags
+# Using tags
 
-## Overview
+This example includes the following pages:
 
 - [Page 1] – Page with tags `foo` and `bar`
 - [Page 2] – Page with tags `bar` and `baz`
 - [Tags] – Tags index
 
-  [Page 1]: example/page-1.md
-  [Page 2]: example/page-1.md
-  [Tags]: example/tags.md
+  [Page 1]: pages/page-1.md
+  [Page 2]: pages/page-2.md
+  [Tags]: pages/tags.md
 
-## Files
-
-Download example:
+Download example as archive:
 
 [Download .zip][Download]{ .md-button .md-button--primary }
 
-Unzip the example, change to the folder and enter:
+Unzip archive, change to the folder and enter:
 
 ``` bash
-python3 -m venv venv && . ./venv/bin/activate
 pip install -r requirements.txt
 mkdocs serve
 ```
