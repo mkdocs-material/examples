@@ -25,7 +25,7 @@
 # Project information
 site_name: Example
 # site_url: https://example.com/
-site_author: Jane Doe
+site_author: Martin Donath
 site_description: >-
   This project lists all options that are supported by Material for MkDocs
   and can be used as a basis for new projects or reproductions.
@@ -36,7 +36,7 @@ repo_url: https://github.com/mkdocs-material/examples
 # edit_uri: edit/master/docs/
 
 # Copyright
-copyright: Copyright &copy; 2022 Jane Doe
+copyright: Copyright &copy; 2022 Martin Donath
 
 # Directories
 # docs_dir: docs
