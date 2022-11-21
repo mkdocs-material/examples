@@ -28,7 +28,7 @@ site_name: Using a light and dark color palette
 # Repository
 repo_name: mkdocs-material/examples
 repo_url: https://github.com/mkdocs-material/examples
-edit_uri: edit/master/examples/tags/docs
+edit_uri: edit/master/examples/color-palette-toggle/docs
 
 # Theme
 theme:

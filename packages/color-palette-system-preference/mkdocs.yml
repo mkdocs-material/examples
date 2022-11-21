@@ -28,7 +28,7 @@ site_name: Linking a color palette to the user's system preference
 # Repository
 repo_name: mkdocs-material/examples
 repo_url: https://github.com/mkdocs-material/examples
-edit_uri: edit/master/examples/tags/docs
+edit_uri: edit/master/examples/color-palette-system-preferencence/docs
 
 # Theme
 theme:

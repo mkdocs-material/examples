@@ -28,7 +28,7 @@ site_name: Using custom colors
 # Repository
 repo_name: mkdocs-material/examples
 repo_url: https://github.com/mkdocs-material/examples
-edit_uri: edit/master/examples/tags/docs
+edit_uri: edit/master/examples/custom-colors/docs
 
 # Theme
 theme:
