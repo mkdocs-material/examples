@@ -8,7 +8,7 @@ This example shows how to make the cookie consent comply with GDPR.
 
 Download example as archive:
 
-[Download .zip][Download]{ .md-button .md-button--primary }
+[Download .zip][Download]{ .md-button .md-button--priary }
 
 Unzip archive, change to the folder and enter:
 
