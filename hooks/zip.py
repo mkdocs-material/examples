@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -18,34 +18,38 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+import os
+
+from glob import iglob
+from mkdocs.config.defaults import MkDocsConfig
+from zipfile import ZipFile, ZIP_DEFLATED
+
 # -----------------------------------------------------------------------------
-# Recommended: set up configuration validation, see https://bit.ly/3WT2GkR
+# Hooks
 # -----------------------------------------------------------------------------
 
-# Project information
-site_name: Using tags
+# Create an archive
+def on_pre_build(config: MkDocsConfig):
+    base = os.path.dirname(config.config_file_path)
+    project_name = os.path.basename(base)
 
-# Repository
-repo_name: mkdocs-material/examples
-repo_url: https://github.com/mkdocs-material/examples
-edit_uri: edit/master/examples/tags/docs
+    archive = f"{config.docs_dir}/download.zip"
+    with ZipFile(archive, "w", ZIP_DEFLATED, False) as f:
+        for name in os.listdir(base):
+            # @todo: load ignore patterns from .gitignore
+            if name == "site":
+                continue
+            if name.endswith(".zip"):
+                continue
 
-# Theme
-theme:
-  name: material
-  features:
-    - navigation.sections
+            # Find all files recursively and add them to the archive
+            path = os.path.join(base, name)
+            if os.path.isdir(path):
+                path = os.path.join(path, "**")
 
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: pages/tags.md
-
-# Markdown extensions
-markdown_extensions:
-  - attr_list
-  - toc:
-      permalink: true
-  - pymdownx.highlight
-  - pymdownx.superfences
+            # @todo
+            for file in iglob(path, recursive = True):
+                f.write(
+                    file,
+                    os.path.join(project_name, os.path.relpath(file, base))
+                )

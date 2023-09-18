@@ -1,4 +1,4 @@
-# Example
+# Examples
 
 This project lists all options that are supported by Material for MkDocs and
 can be used as a basis for new projects or reproductions. Note that some options
@@ -8,6 +8,3 @@ to be sure.
   [sponsors]: https://squidfunk.github.io/mkdocs-material/insiders/
   [available features]: https://squidfunk.github.io/mkdocs-material/insiders/#whats-in-for-me
 
-``` yaml
---8<-- "mkdocs.yml"
-```

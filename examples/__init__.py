@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -18,46 +18,37 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+import os
+import posixpath
+
+from mergedeep import merge
+from mkdocs.config.defaults import MkDocsConfig
+
 # -----------------------------------------------------------------------------
-# Recommended: set up configuration validation, see https://bit.ly/3WT2GkR
+# Functions
 # -----------------------------------------------------------------------------
 
-# Project information
-site_name: Using tags with icons
+# Transform project configuration
+def transform(project: MkDocsConfig, config: MkDocsConfig):
+    root = os.path.dirname(project.config_file_path)
+    name = os.path.basename(root)
 
-# Repository
-repo_name: mkdocs-material/examples
-repo_url: https://github.com/mkdocs-material/examples
-edit_uri: edit/master/examples/tags-with-icons/docs
+    # Inherit settings for repository
+    project.repo_name = config.repo_name
+    project.repo_url  = config.repo_url
 
-# Theme
-theme:
-  name: material
-  features:
-    - navigation.sections
-  icon:
-    tag:
-      css: simple/css3
-      html: simple/html5
-      js: simple/javascript
+    # Inherit settings for site URL and edit URI
+    project.site_url = posixpath.join(config.site_url, name, "")
+    project.edit_uri = f"edit/master/examples/{name}/docs/"
 
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: pages/tags.md
+    # Inherit settings for copyright
+    project.copyright = config.copyright
 
-# Extra configuration
-extra:
-  tags:
-    CSS: css
-    HTML: html
-    JavaScript: js
+    # Inherit settings for theme
+    merge(project.theme["icon"], config.theme["icon"])
+    project.theme["features"].extend(config.theme["features"])
 
-# Markdown extensions
-markdown_extensions:
-  - attr_list
-  - toc:
-      permalink: true
-  - pymdownx.highlight
-  - pymdownx.superfences
+    root = os.path.dirname(config.config_file_path)
+    project.hooks = [
+        os.path.join(root, "hooks", "zip.py")
+    ]
