@@ -1,7 +1,3 @@
----
-title: Overview
----
-
 # Using tags
 
 This example includes the following pages:

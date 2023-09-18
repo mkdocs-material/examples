@@ -1,7 +1,3 @@
----
-title: Overview
----
-
 # Using tags with icons
 
 This example includes the following pages:

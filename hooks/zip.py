@@ -53,3 +53,8 @@ def on_pre_build(config: MkDocsConfig):
                     file,
                     os.path.join(project_name, os.path.relpath(file, base))
                 )
+
+#
+def on_page_markdown(markdown, *, page, config, files):
+    if page.file.src_uri == "README.md":
+        page.meta["title"] = "Overview"
