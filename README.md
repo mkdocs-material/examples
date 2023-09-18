@@ -3,5 +3,5 @@
 - [Tags]
 - [Tags with icons]
 
-  [Tags]: packages/tags/
-  [Tags with icons]: packages/tags-with-icons/
+  [Tags]: example/tags/
+  [Tags with icons]: examples/tags-with-icons/
