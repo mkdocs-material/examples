@@ -33,13 +33,12 @@ def on_pre_build(config: MkDocsConfig):
     base = os.path.dirname(config.config_file_path)
     project_name = os.path.basename(base)
 
-    archive = f"{config.docs_dir}/download.zip"
+    archive = f"docs/download/{project_name}.zip"
+    os.makedirs(os.path.dirname(archive), exist_ok = True)
     with ZipFile(archive, "w", ZIP_DEFLATED, False) as f:
         for name in os.listdir(base):
             # @todo: load ignore patterns from .gitignore
             if name == "site":
-                continue
-            if name.endswith(".zip"):
                 continue
 
             # Find all files recursively and add them to the archive
