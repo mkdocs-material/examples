@@ -47,8 +47,3 @@ def transform(project: MkDocsConfig, config: MkDocsConfig):
     # Inherit settings for theme
     merge(project.theme["icon"], config.theme["icon"])
     project.theme["features"].extend(config.theme["features"])
-
-    root = os.path.dirname(config.config_file_path)
-    project.hooks = [
-        os.path.join(root, "hooks", "zip.py")
-    ]

@@ -12,16 +12,3 @@ This example includes the following pages:
   [HTML]: demo/tags.md#html
   [JavaScript]: demo/tags.md#javascript
   [CSS]: demo/tags.md#css
-
-Download example as archive:
-
-[Download .zip][Download]{ .md-button .md-button--primary }
-
-Unzip archive, change to the folder and enter:
-
-``` bash
-pip install -r requirements.txt
-mkdocs serve
-```
-
-  [Download]: ../../download/tags.zip
