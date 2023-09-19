@@ -24,4 +24,4 @@ pip install -r requirements.txt
 mkdocs serve
 ```
 
-  [Download]: download.zip
+  [Download]: ../../download/tags-with-icons.zip
