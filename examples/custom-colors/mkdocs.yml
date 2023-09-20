@@ -23,7 +23,7 @@
 # -----------------------------------------------------------------------------
 
 # Project information
-site_name: Using tags
+site_name: Using custom colors
 
 # Theme
 theme:
@@ -31,11 +31,9 @@ theme:
   features:
     - navigation.sections
 
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: demo/tags.md
+# Additional CSS
+extra_css:
+  - stylesheets/extra.css
 
 # Markdown extensions
 markdown_extensions:

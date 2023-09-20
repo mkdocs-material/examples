@@ -47,6 +47,7 @@ theme:
 # Plugins
 plugins:
   - projects:
+      cache: false
       projects_dir: examples
       projects_config_transform: !!python/name:examples.transform
 

@@ -1,7 +1,5 @@
 # Examples
 
-- [Tags]
-- [Tags with icons]
+This repository contains runnable examples for [Material for MkDocs].
 
-  [Tags]: example/tags/
-  [Tags with icons]: examples/tags-with-icons/
+  [Material for MkDocs]: https://squidfunk.github.io/mkdocs-material/

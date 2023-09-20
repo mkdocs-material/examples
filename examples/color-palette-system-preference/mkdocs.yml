@@ -23,19 +23,32 @@
 # -----------------------------------------------------------------------------
 
 # Project information
-site_name: Using tags
+site_name: Using the color palette system preference
 
 # Theme
 theme:
   name: material
   features:
     - navigation.sections
-
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: demo/tags.md
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
 
 # Markdown extensions
 markdown_extensions:

@@ -18,29 +18,4 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-# -----------------------------------------------------------------------------
-# Recommended: set up configuration validation, see https://t.ly/xpZXU
-# -----------------------------------------------------------------------------
-
-# Project information
-site_name: Using tags
-
-# Theme
-theme:
-  name: material
-  features:
-    - navigation.sections
-
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: demo/tags.md
-
-# Markdown extensions
-markdown_extensions:
-  - attr_list
-  - toc:
-      permalink: true
-  - pymdownx.highlight
-  - pymdownx.superfences
+mkdocs-material

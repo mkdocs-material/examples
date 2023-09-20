@@ -23,7 +23,7 @@
 # -----------------------------------------------------------------------------
 
 # Project information
-site_name: Using tags
+site_name: Adding a custom cookie
 
 # Theme
 theme:
@@ -31,11 +31,21 @@ theme:
   features:
     - navigation.sections
 
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: demo/tags.md
+# Additional configuration
+extra:
+  consent:
+    title: Cookie consent
+    description: >-
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
+    cookies:
+      custom: Custom cookie
+
+# Additional JavaScript
+extra_javascript:
+  - javascripts/consent.js
 
 # Markdown extensions
 markdown_extensions:

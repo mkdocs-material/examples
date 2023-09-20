@@ -45,5 +45,8 @@ def transform(project: MkDocsConfig, config: MkDocsConfig):
     project.copyright = config.copyright
 
     # Inherit settings for theme
-    merge(project.theme["icon"], config.theme["icon"])
     project.theme["features"].extend(config.theme["features"])
+    if "icon" in project.theme:
+        merge(project.theme["icon"], config.theme["icon"])
+    else:
+        project.theme["icon"] = config.theme["icon"]
