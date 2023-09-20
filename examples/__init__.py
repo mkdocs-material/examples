@@ -30,12 +30,16 @@ from mkdocs.config.defaults import MkDocsConfig
 
 # Transform project configuration
 def transform(project: MkDocsConfig, config: MkDocsConfig):
-    root = os.path.dirname(project.config_file_path)
-    name = os.path.basename(root)
+    base = os.path.dirname(project.config_file_path)
+    name = os.path.basename(base)
+
+    # Determine path of examples relative to root
+    root = os.path.dirname(config.config_file_path)
+    path = os.path.relpath(base, root)
 
     # Inherit settings for repository
     project.repo_name = config.repo_name
-    project.repo_url  = config.repo_url
+    project.repo_url  = f"{config.repo_url}/tree/master/{path}"
 
     # Inherit settings for site URL and edit URI
     project.site_url = posixpath.join(config.site_url, name, "")
