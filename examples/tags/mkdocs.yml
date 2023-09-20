@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -18,4 +18,41 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-mkdocs-material
+# -----------------------------------------------------------------------------
+# Recommended: set up configuration validation, see https://bit.ly/3WT2GkR
+# -----------------------------------------------------------------------------
+
+# Project information
+site_name: Using tags
+
+# Theme
+theme:
+  name: material
+  features:
+    - navigation.sections
+  icon:
+    tag:
+      css: simple/css3
+      html: simple/html5
+      js: simple/javascript
+
+# Plugins
+plugins:
+  - search
+  - tags:
+      tags_file: demo/tags.md
+
+# Extra configuration
+extra:
+  tags:
+    CSS: css
+    HTML: html
+    JavaScript: js
+
+# Markdown extensions
+markdown_extensions:
+  - attr_list
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences

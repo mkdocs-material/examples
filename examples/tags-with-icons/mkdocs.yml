@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -25,11 +25,6 @@
 # Project information
 site_name: Using tags with icons
 
-# Repository
-repo_name: mkdocs-material/examples
-repo_url: https://github.com/mkdocs-material/examples
-edit_uri: edit/master/examples/tags-with-icons/docs
-
 # Theme
 theme:
   name: material
@@ -45,7 +40,7 @@ theme:
 plugins:
   - search
   - tags:
-      tags_file: pages/tags.md
+      tags_file: demo/tags.md
 
 # Extra configuration
 extra:

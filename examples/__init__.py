@@ -1,4 +1,4 @@
-# Copyright (c) 2022 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -18,4 +18,32 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
-mkdocs-material
+import os
+import posixpath
+
+from mergedeep import merge
+from mkdocs.config.defaults import MkDocsConfig
+
+# -----------------------------------------------------------------------------
+# Functions
+# -----------------------------------------------------------------------------
+
+# Transform project configuration
+def transform(project: MkDocsConfig, config: MkDocsConfig):
+    root = os.path.dirname(project.config_file_path)
+    name = os.path.basename(root)
+
+    # Inherit settings for repository
+    project.repo_name = config.repo_name
+    project.repo_url  = config.repo_url
+
+    # Inherit settings for site URL and edit URI
+    project.site_url = posixpath.join(config.site_url, name, "")
+    project.edit_uri = f"edit/master/examples/{name}/docs/"
+
+    # Inherit settings for copyright
+    project.copyright = config.copyright
+
+    # Inherit settings for theme
+    merge(project.theme["icon"], config.theme["icon"])
+    project.theme["features"].extend(config.theme["features"])
