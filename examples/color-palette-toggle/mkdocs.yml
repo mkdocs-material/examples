@@ -23,19 +23,26 @@
 # -----------------------------------------------------------------------------
 
 # Project information
-site_name: Using tags
+site_name: Using the color palette toggle
 
 # Theme
 theme:
   name: material
   features:
     - navigation.sections
-
-# Plugins
-plugins:
-  - search
-  - tags:
-      tags_file: demo/tags.md
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 
 # Markdown extensions
 markdown_extensions:
