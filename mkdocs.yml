@@ -40,7 +40,6 @@ theme:
     - content.action.edit
     - content.action.view
     - content.tooltips
-    - navigation.indexes
     - navigation.sections
   icon:
     logo: logo
@@ -48,7 +47,6 @@ theme:
 # Plugins
 plugins:
   - projects:
-      cache: false
       projects_dir: examples
       projects_config_transform: !!python/name:examples.transform
 

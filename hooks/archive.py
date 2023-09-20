@@ -27,11 +27,25 @@ from pathspec.gitignore import GitIgnoreSpec
 from zipfile import ZipFile, ZIP_DEFLATED
 
 # -----------------------------------------------------------------------------
+# State
+# -----------------------------------------------------------------------------
+
+# Initialize incremental builds
+is_serve = False
+
+# -----------------------------------------------------------------------------
 # Hooks
 # -----------------------------------------------------------------------------
 
+# Determine whether we're serving the site
+def on_startup(command, dirty):
+    global is_serve
+    is_serve = command == "serve"
+
 # Create archives for all examples
 def on_post_build(config: MkDocsConfig):
+    if is_serve:
+        return
 
     # Read files to ignore from .gitignore
     with open(".gitignore") as f:
