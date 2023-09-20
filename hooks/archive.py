@@ -72,11 +72,10 @@ def on_post_build(config: MkDocsConfig):
 
                 # Find all files recursively and add them to the archive
                 for file in iglob(path, recursive = True):
-                    location = os.path.join(name, os.path.relpath(file, base))
-
-                    # Add file to archive
                     log.debug(f"+ '{file}'")
-                    f.write(file, location)
+                    f.write(file, os.path.join(
+                        example, os.path.relpath(file, base)
+                    ))
 
 # -----------------------------------------------------------------------------
 # Data
