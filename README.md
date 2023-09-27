@@ -11,7 +11,7 @@ integrations, such as with other plugins. As the cookbook examples
 have more complex requirements, they have to be build independently, 
 see the [cookbook description].
 
-  [cookbook description](cookbooks/README.MD)
+  [cookbook description]: cookbooks/README.MD
 
 ## Building specific examples
 
