@@ -12,6 +12,16 @@
       "url": "http://localhost:8000/mkdocs-material/",
       "webRoot": "${workspaceFolder}",
       "smartStep": true
+    },
+    {
+      "name": "mkdocs serve",
+      "type":"python",
+      "program": "venv/bin/mkdocs",
+      "args": ["serve"],
+      "env": {
+        "PYTHONPATH": "."
+      },
+      "request": "launch"
     }
   ]
 }
