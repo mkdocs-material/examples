@@ -1,7 +1,8 @@
 ---
+title: Happy
 status: happy
 ---
 
-# Happy, happy page!
+# Page with happy content
 
 This page has a custom page status.

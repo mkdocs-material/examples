@@ -1,0 +1,15 @@
+site_name: Page Status Example
+
+theme:
+  name: material
+  features:
+    - navigation.indexes
+
+extra:
+  status:
+    deprecated: Will be removed soon
+    new: Recently added
+    happy: Happy
+
+extra_css:
+  - stylesheets/extra.css
