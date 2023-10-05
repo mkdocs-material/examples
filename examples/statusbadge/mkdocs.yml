@@ -1,0 +1,22 @@
+site_name: Page Status Example
+
+theme: 
+  name: material
+  features:
+    - navigation.indexes
+
+extra:
+  status:
+    new: Recently Added
+    happy: Happy!
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - "Home": index.md
+  - "Deprecated": deprecated.md
+  - "Happy": happy.md
+  - "New Section":
+    - newsect/index.md
+    - "Other": newsect/other.md
