@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://mkdocs-material.github.io/examples/tags-with-icons/</loc>
+         <loc>https://mkdocs-material.github.io/examples/statusbadge/</loc>
          <lastmod>2023-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mkdocs-material.github.io/examples/tags-with-icons/demo/page-1/</loc>
+         <loc>https://mkdocs-material.github.io/examples/statusbadge/deprecated/</loc>
          <lastmod>2023-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mkdocs-material.github.io/examples/tags-with-icons/demo/page-2/</loc>
+         <loc>https://mkdocs-material.github.io/examples/statusbadge/happy/</loc>
          <lastmod>2023-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mkdocs-material.github.io/examples/tags-with-icons/demo/tags/</loc>
+         <loc>https://mkdocs-material.github.io/examples/statusbadge/newsect/</loc>
          <lastmod>2023-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://mkdocs-material.github.io/examples/tags-with-icons/demo/tags/</loc>
+         <loc>https://mkdocs-material.github.io/examples/statusbadge/newsect/other/</loc>
          <lastmod>2023-10-05</lastmod>
          <changefreq>daily</changefreq>
     </url>
