@@ -1,0 +1,14 @@
+# This file is used only to generate a browsable
+# list of examples for our documentation. You do
+# not need it in your own projects.
+meta:
+  tags:
+    - public        # works without Insiders
+    - blog          # functionality demonstrated
+    - simple        # requires no extra plugins or other magic
+      # - experimental  # uses an experimental feature somewhere
+  author:
+    name: Alex Voss  # author name
+    handle: alexvoss # a Github handle for giving credit and
+                     # identifying who would fix any regressions
+                     # other than @squidfunk
