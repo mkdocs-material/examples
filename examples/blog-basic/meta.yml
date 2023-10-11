@@ -4,11 +4,13 @@
 meta:
   tags:
     - public        # works without Insiders
+      #- insiders      # requires Insiders edition
     - blog          # functionality demonstrated
     - simple        # requires no extra plugins or other magic
-      # - experimental  # uses an experimental feature somewhere
-  author:
-    name: Alex Voss  # author name
-    handle: alexvoss # a Github handle for giving credit and
-                     # identifying who would fix any regressions
-                     # other than @squidfunk
+      #- integration   # demonstrates integration, use of other plugins
+      #- experimental  # uses an experimental feature somewhere
+  authors:
+    alexvoss:
+      name: Alex Voss
+      description: Collaborator
+      avatar: https://github.com/alexvoss.png
