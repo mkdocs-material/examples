@@ -1,7 +1,5 @@
-# Copyright (c) 2016-2023 the authors:
-#
-#   Martin Donath <martin.donath@squidfunk.com>
-#   Alex Voss <alex@corealisation.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+#                         Alex Voss <alex@corealisation.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -36,15 +34,9 @@ theme:
 
 # Plugins
 plugins:
-  # Note that you need to add the search plugin manually
-  # as soon as you use another plugin.
   - search
-  # Blog plugin
-  - blog:
-      pagination: true
-      pagination_per_page: 5
-  # RSS plugin - https://pypi.org/project/mkdocs-rss-plugin/
-  - rss:
+  - blog # https://squidfunk.github.io/mkdocs-material/plugins/blog/
+  - rss: # https://pypi.org/project/mkdocs-rss-plugin/
       match_path: blog/posts/.*
       date_from_meta:
         as_creation: date

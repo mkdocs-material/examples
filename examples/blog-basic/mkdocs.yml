@@ -1,7 +1,5 @@
-# Copyright (c) 2016-2023 the authors:
-#
-#   Martin Donath <martin.donath@squidfunk.com>
-#   Alex Voss <alex@corealisation.com>
+# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+#                         Alex Voss <alex@corealisation.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to
@@ -32,11 +30,7 @@ site_name: Basic blog setup example
 theme:
   name: material
 
-# Plugins 
-# Note that you need to add the search plugin manually
-# as soon as you use another plugin.
+# Plugins
 plugins:
   - search
-  - blog:
-      pagination: true
-      pagination_per_page: 5
+  - blog

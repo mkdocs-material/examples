@@ -6,7 +6,7 @@ categories:
   - hello
 ---
 
-# Welcome to Material for MkDocs
+# A second post
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque nec
 maximus ex. Sed consequat, nulla quis malesuada dapibus, elit metus vehicula
