@@ -1,0 +1,16 @@
+# This file is used only to generate a browsable
+# list of examples for our documentation. You do
+# not need it in your own projects.
+meta:
+  tags:
+    - public        # works without Insiders
+      #- insiders      # requires Insiders edition
+    - blog          # functionality demonstrated
+      #- simple        # requires no extra plugins or other magic
+    - integration   # demonstrates integration, use of other plugins
+      #- experimental  # uses an experimental feature somewhere
+  authors:
+    alexvoss:
+      name: Alex Voss
+      description: Collaborator
+      avatar: https://github.com/alexvoss.png

@@ -1,0 +1,56 @@
+# Copyright (c) 2016-2023 the authors:
+#
+#   Martin Donath <martin.donath@squidfunk.com>
+#   Alex Voss <alex@corealisation.com>
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to
+# deal in the Software without restriction, including without limitation the
+# rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+# sell copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+# IN THE SOFTWARE.
+
+# -----------------------------------------------------------------------------
+# Recommended: set up configuration validation, see https://t.ly/xpZXU
+# -----------------------------------------------------------------------------
+
+# Project information
+site_name: Blog with RSS example            # required by RSS plugin
+site_description: one of many fine examples # required by RSS plugin
+site_url: http://localhost:8080             # required by RSS plugin
+
+# Theme
+theme:
+  name: material
+
+# Plugins
+plugins:
+  # Note that you need to add the search plugin manually
+  # as soon as you use another plugin.
+  - search
+  # Blog plugin
+  - blog:
+      pagination: true
+      pagination_per_page: 5
+  # RSS plugin - https://pypi.org/project/mkdocs-rss-plugin/
+  - rss:
+      match_path: blog/posts/.*
+      date_from_meta:
+        as_creation: date
+        as_update: false
+        date_format: "%Y-%m-%d" # specify if the RSS plugin does
+                                # not understand the format you use
+      categories:
+        - categories
+        - tags
