@@ -1,0 +1,10 @@
+example:
+  tags:
+    - public        # works without Insiders
+    - blog          # functionality demonstrated
+    - integration   # demonstrates integration, use of other plugins
+  authors:
+    alexvoss:
+      name: Alex Voss
+      description: Collaborator
+      avatar: https://github.com/alexvoss.png
