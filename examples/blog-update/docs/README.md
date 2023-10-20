@@ -1,12 +1,8 @@
 # A blog with update dates shown
 
 This example shows how to add a small customization that will show
-then blob posts were [updated] on the blog index pages. (The blog page
+then blog posts were [updated] on the blog index pages. (The blog page
 template already contains this.)
-
-
-If you have not already set up a blog for your site then please start
-with the [Basic blog] example.
 
 It shows how to:
 
@@ -15,6 +11,15 @@ It shows how to:
   that the [main blog index], the [archive index] and the [categories
   index] show the update date
 
+**Note**: Please note that when overriding templates you are copying
+part of the code that makes up Material for MkDocs and so need to take
+care when upgrading. The [changelog] contains a note on which
+templates have changed, if any. 
+
+If you have not already set up a blog for your site then please start
+with the [Basic blog] example.
+
+[changelog]: https://squidfunk.github.io/mkdocs-material/changelog/
 [Basic blog]: ../blog-basic
 [My first post]: blog/2023/10/11/my-first-blog-post
 [main blog index]: blog

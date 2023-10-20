@@ -1,5 +1,8 @@
 {#-
-  This file was automatically generated - do not edit
+  Remember to check the changelog when updating Material for MkDocs. If the
+  template has changed it is generally a good idea to apply the customization
+  to the new one instead of depending on an old template, which may cause
+  problems downstream.
 -#}
 <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -20,9 +23,9 @@
           </time>
           <!-- start customization -->
           {% if post.config.date.updated %}
-          <time datetime="{{ post.config.date.updated }}">
-            &nbsp;({{- post.config.date.updated | date -}})
-          </time>
+            <time datetime="{{ post.config.date.updated }}">
+              ({{ post.config.date.updated | date }})
+            </time>
           {% endif %}
           <!-- end customization -->
           {#- Collapse whitespace -#}
