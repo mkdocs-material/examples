@@ -54,12 +54,12 @@ def transform(project: MkDocsConfig, config: MkDocsConfig):
         raise ConfigurationError("Material is not defined as a theme, add it to mkdocs.yml")
 
     # Inherit settings for theme
-    if project.theme and "features" in project.theme:
+    if "features" in project.theme:
         project.theme["features"].extend(config.theme["features"])
     else:
         project.theme["features"] = config.theme["features"]
 
-    if project.theme and "icon" in project.theme:
+    if "icon" in project.theme:
         merge(project.theme["icon"], config.theme["icon"])
     else:
         project.theme["icon"] = config.theme["icon"]
