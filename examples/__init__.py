@@ -23,6 +23,7 @@ import posixpath
 
 from mergedeep import merge
 from mkdocs.config.defaults import MkDocsConfig
+from mkdocs.exceptions import  ConfigurationError
 
 # -----------------------------------------------------------------------------
 # Functions
@@ -48,13 +49,17 @@ def transform(project: MkDocsConfig, config: MkDocsConfig):
     # Inherit settings for copyright
     project.copyright = config.copyright
 
+    # check that a theme has been defined and we are not running with the default theme
+    if project.theme == "mkdocs":
+        raise ConfigurationError("Material is not defined as a theme, add it to mkdocs.yml")
+
     # Inherit settings for theme
-    if "features" in project.theme:
+    if project.theme and "features" in project.theme:
         project.theme["features"].extend(config.theme["features"])
     else:
         project.theme["features"] = config.theme["features"]
 
-    if "icon" in project.theme:
+    if project.theme and "icon" in project.theme:
         merge(project.theme["icon"], config.theme["icon"])
-    else:
+    else:        
         project.theme["icon"] = config.theme["icon"]
