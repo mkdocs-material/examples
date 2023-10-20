@@ -61,5 +61,5 @@ def transform(project: MkDocsConfig, config: MkDocsConfig):
 
     if project.theme and "icon" in project.theme:
         merge(project.theme["icon"], config.theme["icon"])
-    else:        
+    else:
         project.theme["icon"] = config.theme["icon"]
