@@ -23,7 +23,7 @@ Here we have some text in:
 - `Noto Mono`
 - __`Noto Mono bold`__ 
 
-## Hot it works
+## How it works
 
 In `mkdocs.yml`, turn off the auto-loading of fonts from Google Fonts
 and add an extra CSS stylesheet to configure your custom fonts.
@@ -169,9 +169,14 @@ to point to the files located on your own server, e.g., in
 ## (Dis-)Advantages
 
 If you are loading the fonts from a CDN as in this example, you are
-still not limiting traffic to only your website. 
+still not limiting traffic to only your website. To do that you would
+need to host the fonts as part of your site as described above.
 
-TODO: what about fonts hosted on GitHub Pages? A lot of documentation lies on GHP anyway, so why not load the fonts from there? Do they offer this?
+Try not to use too many different fonts as that will slow down your
+page load and rendering times.
+
+Compared to using built-in browser fonts only, you have mote control
+over the look of your site.
 
 ## Alternatives
 
