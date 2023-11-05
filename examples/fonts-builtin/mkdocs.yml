@@ -34,3 +34,11 @@ copyright: Copyright &copy; 2016 - 2023 Alex Voss and Martin Donath
 theme:
   name: material
   font: false
+
+# Markdown Extensions
+# (needed for this example, not for turning off Google Fonts)
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+

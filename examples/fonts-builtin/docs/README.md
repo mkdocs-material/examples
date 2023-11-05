@@ -37,9 +37,19 @@ of your website as different browsers will choose different fonts.
 
 ## Alternatives
 
+!!! tip "Privacy Plugin"
+
+    The [privacy plugin] provided by Material for MkDocs provides a
+    best-of-both-worlds solution in that it allows you to specifc 
+    fonts available on Google Fonts directly in your `mkdocs.yml`.
+    It automatically downloads the ones used and includes them in 
+    your website so they are served up by your own server. 
+    No need for a custom stylesheet.
+
 An alternative is to turn off the use of Roboto from Google Fonts and
 then [configure custom fonts to use], as shown in [this example that shows
 how to switch to the Noto font family].
 
+[privacy plugin]: https://squidfunk.github.io/mkdocs-material/plugins/privacy/
 [configure custom fonts to use]: https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/#additional-fonts
 [this example that shows how to switch to the Noto font family]: ../fonts-custom
