@@ -1,7 +1,7 @@
 # Using built-in browser fonts
 
 This example shows what happens when auto-loading of fonts from Google
-is turned off and not other fonts are configured:
+is turned off and no other fonts are configured:
 
 regular - __bold__ - *italic* - __*bold italic*__ - `code`
 
@@ -40,7 +40,7 @@ of your website as different browsers will choose different fonts.
 !!! tip "Privacy Plugin"
 
     The [privacy plugin] provided by Material for MkDocs provides a
-    best-of-both-worlds solution in that it allows you to specifc 
+    best-of-both-worlds solution in that it allows you to specify
     fonts available on Google Fonts directly in your `mkdocs.yml`.
     It automatically downloads the ones used and includes them in 
     your website so they are served up by your own server. 
