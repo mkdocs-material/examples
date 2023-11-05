@@ -33,8 +33,6 @@ theme:
 
 # Extra CSS
 extra_css:
-  - https://fonts.cdnfonts.com/css/noto-serif
-  - https://fonts.cdnfonts.com/css/noto-mono
   - assets/stylesheets/extra.css
 
 # Markdown Extensions
@@ -43,3 +41,5 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true

@@ -16,11 +16,12 @@ server, see below.
 
 Here we have some text in:
 
-- regular - using Noto Serif
-- **bold** - using Noto Serif bold
-- *italic* - using Noto Serif italic
-- __*bold italic*__ - using Noto Serif bold italic
-- `code` - using Noto Mono
+- Noto Serif
+- **Noto Serif bold**
+- *Noto Serif italic*
+- __*Noto Serif bold italic*__
+- `Noto Mono`
+- __`Noto Mono`__ 
 
 ## Hot it works
 
@@ -39,25 +40,85 @@ Then, [configure custom fonts] hosted either on a CDN or on your own
 server, depending on your needs. We demonstrate this here with the 
 Noto Sans and Noto Mono font families.
 
-[configure custom fonts] https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/#additional-fonts
+[configure custom fonts]: https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/#additional-fonts
 
-### Using a CDN
+### Using a CDN's CSS
 
 If you are using a CDN to load your fonts, you may want to use CSS
-that the operators of the CDN are providing, instead of writing your
-own:
+that the operators of the CDN are providing for defining the font
+faces, instead of writing your own. You still need to configure the
+fonts for Material to use, though:
 
-```yaml
-extra_css:
-  - https://fonts.cdnfonts.com/css/noto-serif
-  - https://fonts.cdnfonts.com/css/noto-mono
-  - assets/stylesheets/extra.css
-```
+=== "`mkdocs.yml`"
 
+    ```yaml
+    extra_css:
+      - https://fonts.cdnfonts.com/css/noto-serif
+      - https://fonts.cdnfonts.com/css/noto-mono
+      - assets/stylesheets/extra.css
+    ```
+
+=== "`extra.css`"
+
+    ```css
+    :root {
+      --md-text-font: "Noto Serif";
+      --md-code-font: "Noto Mono";
+    }
+    ```
+
+### Using a CDN with your own CSS
+
+=== "`mkdocs.yml`"
+
+    ```yaml
+    extra_css:
+      - assets/stylesheets/extra.css
+    ```
+
+=== "`extra.css`"
+
+    ```css
+    @font-face {
+      font-family: "Noto Serif"; font-weight: normal; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Regular.otf");
+    }
+
+    @font-face {
+      font-family: "Noto Serif"; font-weight: bold; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Bold.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Serif"; font-weight: normal; font-style: italic;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Italic.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Mono"; font-weight: normal; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Regular.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Mono"; font-weight: bold; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Bold.otf");
+    }
+
+    :root {
+      --md-text-font: "Noto Serif";
+      --md-code-font: "Noto Mono";
+    }
+    ```
 
 ### Hosting on your own server
 
-
+The code for hosting the fonts on your own server looks very similar
+to the previous example that used a CDN. You need to write your own
+font face definitions but this time you change the URL to point to the
+files located on your own server, e.g., in `docs/assets/fonts`:
 
 ## (Dis-)Advantages
 
