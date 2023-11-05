@@ -33,7 +33,8 @@ theme:
 
 # Extra CSS
 extra_css:
-  - assets/stylesheets/extra.css
+  #- assets/stylesheets/extra.css
+  - assets/stylesheets/extra_local.css
 
 # Markdown Extensions
 # (needed for this example, not for turning off Google Fonts)

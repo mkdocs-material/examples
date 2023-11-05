@@ -21,7 +21,7 @@ Here we have some text in:
 - *Noto Serif italic*
 - __*Noto Serif bold italic*__
 - `Noto Mono`
-- __`Noto Mono`__ 
+- __`Noto Mono bold`__ 
 
 ## Hot it works
 
@@ -113,12 +113,58 @@ fonts for Material to use, though:
     }
     ```
 
-### Hosting on your own server
+### Hosting on your own site
 
-The code for hosting the fonts on your own server looks very similar
-to the previous example that used a CDN. You need to write your own
-font face definitions but this time you change the URL to point to the
-files located on your own server, e.g., in `docs/assets/fonts`:
+The code for hosting the fonts yourself as part of your site, looks
+very similar to the previous example that used a CDN. You need to
+write your own font face definitions but this time you change the URL
+to point to the files located on your own server, e.g., in
+`docs/assets/fonts`:
+
+=== "`mkdocs.yml`"
+
+    ```yaml
+    extra_css:
+      - assets/stylesheets/extra.css
+    ```
+
+=== "`extra.css`"
+
+    ```css
+    @font-face {
+      font-family: "Noto Serif"; font-weight: normal; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Regular.otf");
+    }
+
+    @font-face {
+      font-family: "Noto Serif"; font-weight: bold; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Bold.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Serif"; font-weight: normal; font-style: italic;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Italic.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Mono"; font-weight: normal; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Regular.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Mono"; font-weight: bold; font-style: normal;
+      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Bold.otf");
+    }
+
+    :root {
+      --md-text-font: "Noto Serif";
+      --md-code-font: "Noto Mono";
+    }
+    ```
+
 
 ## (Dis-)Advantages
 
