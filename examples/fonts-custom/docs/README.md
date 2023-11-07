@@ -23,6 +23,22 @@ Here we have some text in:
 - `Noto Mono`
 - __`Noto Mono bold`__ 
 
+!!! tip "Privacy Plugin"
+
+    Before you consider the examples below, you should know that loading fonts
+    or other assets from a CDN may bring you into non-compliance with data
+    protection legislation such as the GDPR in the EU. You can read more about
+    this in the [ensuring data privacy] section of the documentation.
+
+    The [privacy plugin] provided by Material for MkDocs provides a
+    best-of-both-worlds solution in that it allows you to specify fonts
+    available on Google Fonts directly in your `mkdocs.yml`.  It automatically
+    downloads the ones used and includes them in your website so they are served
+    up together with your documentation.  No need for a custom stylesheet.
+
+[ensuring data privacy]: https://squidfunk.github.io/mkdocs-material/setup/ensuring-data-privacy
+[privacy plugin]: https://squidfunk.github.io/mkdocs-material/plugins/privacy/
+
 ## How it works
 
 In `mkdocs.yml`, turn off the auto-loading of fonts from Google Fonts
@@ -67,58 +83,12 @@ fonts for Material to use, though:
     }
     ```
 
-### Using a CDN with your own CSS
-
-=== "`mkdocs.yml`"
-
-    ```yaml
-    extra_css:
-      - assets/stylesheets/extra.css
-    ```
-
-=== "`extra.css`"
-
-    ```css
-    @font-face {
-      font-family: "Noto Serif"; font-weight: normal; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Regular.otf");
-    }
-
-    @font-face {
-      font-family: "Noto Serif"; font-weight: bold; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Bold.otf");
-
-    }
-
-    @font-face {
-      font-family: "Noto Serif"; font-weight: normal; font-style: italic;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Italic.otf");
-
-    }
-
-    @font-face {
-      font-family: "Noto Mono"; font-weight: normal; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Regular.otf");
-
-    }
-
-    @font-face {
-      font-family: "Noto Mono"; font-weight: bold; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Bold.otf");
-    }
-
-    :root {
-      --md-text-font: "Noto Serif";
-      --md-code-font: "Noto Mono";
-    }
-    ```
-
 ### Hosting on your own site
 
 The code for hosting the fonts yourself as part of your site, looks
 very similar to the previous example that used a CDN. You need to
-write your own font face definitions but this time you change the URL
-to point to the files located on your own server, e.g., in
+write your own font face definitions and point the browser 
+to the files located on your own server, e.g., in
 `docs/assets/fonts`:
 
 === "`mkdocs.yml`"
@@ -132,31 +102,41 @@ to point to the files located on your own server, e.g., in
 
     ```css
     @font-face {
-      font-family: "Noto Serif"; font-weight: normal; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Regular.otf");
+      font-family: "Noto Serif"; 
+      font-weight: normal; 
+      font-style: normal;
+      src: url("../fonts/NotoSerif-Regular.otf");
     }
 
     @font-face {
-      font-family: "Noto Serif"; font-weight: bold; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Bold.otf");
-
-    }
-
-    @font-face {
-      font-family: "Noto Serif"; font-weight: normal; font-style: italic;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Italic.otf");
-
-    }
-
-    @font-face {
-      font-family: "Noto Mono"; font-weight: normal; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Regular.otf");
+      font-family: "Noto Serif"; 
+      font-weight: bold; 
+      font-style: normal;
+      src: url("../fonts/NotoSerif-Bold.otf");
 
     }
 
     @font-face {
-      font-family: "Noto Mono"; font-weight: bold; font-style: normal;
-      src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Bold.otf");
+      font-family: "Noto Serif"; 
+      font-weight: normal; 
+      font-style: italic;
+      src: url("../fonts/NotoSerif-Italic.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Mono"; 
+      font-weight: normal; 
+      font-style: normal;
+      src: url("../fonts/NotoSansMono-Regular.otf");
+
+    }
+
+    @font-face {
+      font-family: "Noto Mono"; 
+      font-weight: bold; 
+      font-style: normal;
+      src: url("../fonts/NotoSansMono-Bold.otf");
     }
 
     :root {
@@ -168,29 +148,20 @@ to point to the files located on your own server, e.g., in
 
 ## (Dis-)Advantages
 
-If you are loading the fonts from a CDN as in this example, you are
-still not limiting traffic to only your website. To do that you would
-need to host the fonts as part of your site as described above.
+If you are loading the fonts from a CDN as in this example, you are still not
+limiting traffic to only your website. To do that you would need to host the
+fonts as part of your site as described above. We include the CDN example here
+because you may have other reasons to use a CDN other than Google Fonts.
 
-Try not to use too many different fonts as that will slow down your
-page load and rendering times.
+Try not to use too many different fonts as that will slow down your page load
+and rendering times.
 
-Compared to using built-in browser fonts only, you have mote control
-over the look of your site.
+Compared to using built-in browser fonts only, you have more control over the
+look of your site.
 
 ## Alternatives
-
-!!! tip "Privacy Plugin"
-
-    The [privacy plugin] provided by Material for MkDocs provides a
-    best-of-both-worlds solution in that it allows you to specifc 
-    fonts available on Google Fonts directly in your `mkdocs.yml`.
-    It automatically downloads the ones used and includes them in 
-    your website so they are served up by your own server. 
-    No need for a custom stylesheet.
 
 Alternatively, you can simply [use built-in browser fonts] but that
 does mean giving up some control over the look of your site.
 
-[privacy plugin]: https://squidfunk.github.io/mkdocs-material/plugins/privacy/
 [use built-in browser fonts]: ../fonts-builtin
