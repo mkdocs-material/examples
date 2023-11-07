@@ -16,7 +16,7 @@ is an option for you.
 Turn off the default use of Roboto fonts loaded from Google Fonts in
 your `mkdocs.ym`:
 
-```
+```yaml
 theme:
   font: false
 ```
