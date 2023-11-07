@@ -1,4 +1,5 @@
 example:
+  name: Adding a blog to your site
   tags:
     - public        # works without Insiders
     - blog          # functionality demonstrated
