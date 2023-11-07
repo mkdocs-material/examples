@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Noto Serif";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto Serif";
+  font-weight: bold;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Bold.otf");
+
+}
+
+@font-face {
+  font-family: "Noto Serif";
+  font-weight: normal;
+  font-style: italic;
+  src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSerif/unhinted/otf/NotoSerif-Italic.otf");
+
+}
+
+@font-face {
+  font-family: "Noto Mono";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Regular.otf");
+
+}
+
+@font-face {
+  font-family: "Noto Mono";
+  font-weight: bold;
+  font-style: normal;
+  src: url("https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansMono/unhinted/otf/NotoSansMono-Bold.otf");
+}
+
+:root {
+  --md-text-font: "Noto Serif";
+  --md-code-font: "Noto Mono";
+}
+
