@@ -1,0 +1,11 @@
+example:
+  tags:
+    - public        # works without Insiders
+    - blog          # functionality demonstrated
+    - simple        # requires no extra plugins or other magic
+    - customization # shows how to customize the theme
+  authors:
+    alexvoss:
+      name: Alex Voss
+      description: Collaborator
+      avatar: https://github.com/alexvoss.png
