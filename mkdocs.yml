@@ -54,6 +54,7 @@ plugins:
 # Hooks
 hooks:
   - hooks/archive.py
+  - hooks/index_pages.py
 
 # Customization
 extra:
