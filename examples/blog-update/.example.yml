@@ -1,4 +1,5 @@
 example:
+  name: Blog that shows post updates 
   tags:
     - public        # works without Insiders
     - blog          # functionality demonstrated
