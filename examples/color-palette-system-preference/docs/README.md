@@ -1,3 +1,8 @@
+---
+tags: 
+  - colors
+  - public
+---
 # Using the color palette system preference
 
 This example shows how to implement the [color palette toggle] so that it

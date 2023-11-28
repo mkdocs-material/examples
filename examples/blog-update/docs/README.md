@@ -1,3 +1,15 @@
+---
+name: Blog that shows post updates 
+tags:
+  - public
+  - blog
+  - customization
+authors:
+  alexvoss:
+    name: Alex Voss
+    description: Collaborator
+    ghuser: alexvoss
+---
 # A blog with update dates shown
 
 This example shows how to add a small customization that will show

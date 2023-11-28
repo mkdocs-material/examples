@@ -19,6 +19,12 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
 # IN THE SOFTWARE.
 
+"""
+Hook for building an index of examples in `examples/` by parsing the 
+`README.md` files for metadata, both from the Markdown header and the
+Markdown itself.
+"""
+
 import logging
 import os
 from glob import iglob
@@ -31,10 +37,9 @@ from mkdocs.config.defaults import MkDocsConfig
 # -----------------------------------------------------------------------------
 
 # pre-defined structure for the tag filters.
-# TODO: perhaps use tags plugin or tag definition in mkdocs.yml???
 tags = [
-    ["public", "insiders", "simple", "integration"],
-    ["colors", "fonts"],
+    ["public", "insiders", "integration"],
+    ["colors", "fonts", "icons", "page_status"],
     ["blog", "group", "info", "meta", "offline", "optimize", \
      "privacy", "projects", "search", "social", "tags", "typeset"]
 ]
@@ -51,14 +56,61 @@ def on_pre_build(config: MkDocsConfig):
     if len(examples) > 0:
         examples.clear()
 
-    ymlfiles = iglob("examples/*/.example.y*ml", recursive = True)
-    for file in ymlfiles:
-        with open(file, 'r', encoding='utf-8') as f:
-            example = yaml.safe_load(f)['example']
-            example['path'] = os.path.dirname(file)
-            examples.append(example)
+    readmes = iglob("examples/*/docs/README.md", recursive = True)
+    for file in readmes:
+        example = read_header(file)
+        example['path'] = os.path.dirname(file)
+        examples.append(example)
     log.info("Found %d examples with metadata.", len(examples))
 
+def read_header(file) -> dict:
+    """
+    Read the YAML header from a Markdown file (or the first document from 
+    a multi-document yaml file) by scanning for the separator lines ('---').
+    If the metadata do not specify a name for the example, the markdown is 
+    scanned for a top-level heading.
+
+    Limitation: currently assumes there *is* a markdown header, so files
+    without one will fail to parse, resulting in a message on the log and
+    an example object that contains an error message.
+    """
+    header = []
+    with open(file, 'r', encoding='utf-8') as fd:
+        line = fd.readline()
+        if line == '---\n': # found a markdown yaml header
+            example = read_yaml_header(file, header, fd)
+        else: # found plain Markdown file
+            example = {}
+        if not 'name' in example:
+            example['name'] = read_first_markdown_heading(line, fd)
+        return example
+
+def read_yaml_header(file, header, fd):
+    """
+    Read the YAML header from `fd`, scanning up to the second separating
+    line and using `yaml.safe_load()` to do the parsing.
+    """
+    line = fd.readline()
+    while line not in ("---\n", ""):
+        header.append(line)
+        line = fd.readline()
+    try:
+        example = yaml.safe_load("".join(header))
+    except yaml.error.YAMLError as err:
+        log.warning("could not read Markdown header in: %s - error: %s", file, str(err))
+        example = {"name": "failed to parse"}
+    return example
+
+def read_first_markdown_heading(line, fd) -> str:
+    """
+    After reading the YAML header, scan the Markdown for a first-level
+    heading, indicated by '# ' as the first non-whitespace characters.
+    """
+    while not line.startswith('# '):
+        if line == '':
+            return 'no name'
+        line = fd.readline()
+    return line.removeprefix('# ')
 
 def on_page_context(context, *, page, config, nav):
     """

@@ -1,6 +1,14 @@
+/**
+ * Example information
+ */
+
 .md-typeset .author {
     text-align: right;
 }
+
+/**
+ * Tag filters
+ */
 .md-typeset .filters {
     background-color: lightgray;
 }
@@ -27,6 +35,8 @@
     background: #909090;
 }
 
+/** First row: Materials version and integration **/
+
 #public:not(:checked) ~ .example[data-tags~="public"]{
     display:none;
 }
@@ -35,18 +45,74 @@
     display:none;
 }
 
-#simple:not(:checked) ~ .example[data-tags~="simple"]{
-    display:none;
-}
-
 #integration:not(:checked) ~ .example[data-tags~="integration"]{
     display:none;
 }
+
+/** Second row: functionality */
+
+#colors:not(:checked) ~ .example[data-tags~="colors"]{
+    display:none;
+}
+
+#fonts:not(:checked) ~ .example[data-tags~="fonts"]{
+    display:none;
+}
+
+#icons:not(:checked) ~ .example[data-tags~="icons"]{
+    display:none;
+}
+
+#page_status:not(:checked) ~ .example[data-tags~="page_status"]{
+    display:none;
+}
+
+/** Third row: plugin */
 
 #blog:not(:checked) ~ .example[data-tags~="blog"]{
     display:none;
 }
 
-#fonts:not(:checked) ~ .example[data-tags~="fonts"] {
+#group:not(:checked) ~ .example[data-tags~="group"]{
+    display:none;
+}
+
+#info:not(:checked) ~ .example[data-tags~="info"]{
+    display:none;
+}
+
+#meta:not(:checked) ~ .example[data-tags~="meta"]{
+    display:none;
+}
+
+#offline:not(:checked) ~ .example[data-tags~="offline"]{
+    display:none;
+}
+
+#optimize:not(:checked) ~ .example[data-tags~="optimize"]{
+    display:none;
+}
+
+#privacy:not(:checked) ~ .example[data-tags~="privacy"]{
+    display:none;
+}
+
+#projects:not(:checked) ~ .example[data-tags~="projects"]{
+    display:none;
+}
+
+#search:not(:checked) ~ .example[data-tags~="search"]{
+    display:none;
+}
+
+#social:not(:checked) ~ .example[data-tags~="social"]{
+    display:none;
+}
+
+#tags:not(:checked) ~ .example[data-tags~="tags"] {
+    display: none;
+}
+
+#typeset:not(:checked) ~ .example[data-tags~="typeset"] {
     display: none;
 }

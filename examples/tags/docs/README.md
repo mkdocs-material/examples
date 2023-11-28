@@ -1,3 +1,8 @@
+---
+tags: 
+  - public
+  - tags
+---
 # Using tags
 
 This example shows how to use [tags] and includes the following pages:

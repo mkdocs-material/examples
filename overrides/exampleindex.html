@@ -5,7 +5,7 @@
   <div class="examples">
     {% for group in exampletags %}
       {% for tag in group %}
-        <input type="checkbox" id="{{tag}}" checked="true" class="tagcheck"/>  
+        <input type="checkbox" id="{{tag}}" class="tagcheck"/>  
         <label for="{{tag}}" class="taglabel">{{tag.capitalize()}}</label>
       {% endfor %}
       <br/>

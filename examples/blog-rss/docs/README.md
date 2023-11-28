@@ -1,3 +1,14 @@
+---
+tags:
+  - public
+  - blog
+  - integration
+authors:
+  alexvoss:
+    name: Alex Voss
+    description: Collaborator
+    ghuser: alexvoss
+---
 # Adding an RSS feed to a blog
 
 This example shows how to [add an RSS feed to a blog]. You should be

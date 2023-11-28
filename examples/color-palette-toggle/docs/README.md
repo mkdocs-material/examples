@@ -1,3 +1,9 @@
+---
+tags:
+  - colors
+  - public
+---
+
 # Using the color palette toggle
 
 This example shows how to implement the [color palette toggle] to let users switch

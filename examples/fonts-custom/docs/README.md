@@ -1,3 +1,13 @@
+---
+tags:
+  - public
+  - fonts
+authors:
+  alexvoss:
+    name: Alex Voss
+    description: Collaborator
+    ghuser: alexvoss
+---
 # Using a custom font
 
 This example uses the Noto Serif and Noto Mono font families to show
