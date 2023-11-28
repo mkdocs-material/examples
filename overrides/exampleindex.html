@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% include "partials/content.html" %}
+  <div class="examples">
+    {% for group in exampletags %}
+      {% for tag in group %}
+        <input type="checkbox" id="{{tag}}" checked="true" class="tagcheck"/>  
+        <label for="{{tag}}" class="taglabel">{{tag.capitalize()}}</label>
+      {% endfor %}
+      <br/>
+    {% endfor %}
+    {% for example in examples %}
+      <div class="admonition note example" 
+        data-tags="{{ ' '.join(example['tags'])}}">
+        <div style="float:right;padding-left:1em">
+          {{ ', '.join(example['tags']) }}
+        </div>
+        <a href="/{example['path']}">{{ example['name']}}</a>
+        <div class="author">
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

@@ -21,7 +21,6 @@
 
 import logging
 import os
-import re
 from glob import iglob
 
 import yaml
@@ -31,20 +30,27 @@ from mkdocs.config.defaults import MkDocsConfig
 # State
 # -----------------------------------------------------------------------------
 
-# Initialize incremental builds
+# pre-defined structure for the tag filters.
+# TODO: perhaps use tags plugin or tag definition in mkdocs.yml???
+tags = [
+    ["public", "insiders", "simple", "integration"],
+    ["colors", "fonts"],
+    ["blog", "group", "info", "meta", "offline", "optimize", \
+     "privacy", "projects", "search", "social", "tags", "typeset"]
+]
+
+# The list of examples.
 examples = []
 
-# -----------------------------------------------------------------------------
-# Hooks
-# -----------------------------------------------------------------------------
-
-def on_pre_build(config: MkDocsConfig):
+def on_pre_build(_: MkDocsConfig):
     """
-    Populate the module variable examples with the data from all the
-    `.example.y(a)ml` files we can find in `examples/`.
+    Populate the module variables examples and tags with the data from all 
+    the `.example.y(a)ml` files we can find in `examples/`.
     """
 
-    # Create archives for each example
+    if len(examples) > 0:
+        examples.clear()
+
     ymlfiles = iglob("examples/*/.example.y*ml", recursive = True)
     for file in ymlfiles:
         with open(file, 'r', encoding='utf-8') as f:
@@ -53,54 +59,14 @@ def on_pre_build(config: MkDocsConfig):
             examples.append(example)
     log.info("Found %d examples with metadata.", len(examples))
 
-def on_page_markdown(markdown: str, page, config, files):
-    """
-    For each markdown page, look for a marker `<!-- index: filter -->` and
-    replace it with the list of examples.
-    """
 
-    def replace(match: re.Match):
-        rendered = []
-        indextype, args = match.groups()
-        args = args.strip()
-        if indextype == "all":
-            for example in examples:
-                rendered.append(render(example))
-            return '\n'.join(rendered)
-        else:
-            log.error("At the moment, we do not support filtering, so use 'all'.")
-            return "Invalid index placeholder."
-
-    log.info("looking for index definitions")
-    return re.sub(
-        r"<!-- index:(\w+)(.*?) -->",
-        replace, markdown, flags = re.I | re.M
-    )
-
-def render(example: dict) -> str:
+def on_page_context(context, *, page, config, nav):
     """
-    Render an individual example and return the HTML as a string.
+    Put the data collected into the rendering context so the data are 
+    available to the template.
     """
-    if not 'name' in example and 'path' in example:
-        log.info("ignored example %s as it was missing a name", example['path'])
-        return ""
-    result = f""" <div class="admonition note">
-    <div style="float:right;padding-left:1em">{render_tags(example['tags'])}</div>
-    <a href="/{example['path']}">
-    {example['name']}
-    </a>
-    </div>""".strip()
-    return result
-
-def render_tags(tags: list) -> str:
-    """
-    Render a list of tags. TODO: discuss how tags can be selected?
-    """
-    return ', '.join(tags)
-
-# -----------------------------------------------------------------------------
-# Data
-# -----------------------------------------------------------------------------
+    context["exampletags"] = tags
+    context["examples"] = examples
 
 # Set up logging
 log = logging.getLogger("mkdocs.material.examples")

@@ -1,0 +1,44 @@
+.md-typeset .filters {
+    background-color: lightgray;
+}
+
+.md-typeset .tagcheck {
+    display: none;
+}
+
+.md-typeset .taglabel {
+    background: var(--md-primary-fg-color);
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    font-size: .64rem;
+}
+
+.md-typeset input:not(:checked) + .taglabel {
+    background: #909090;
+}
+
+#public:not(:checked) ~ .example[data-tags~="public"]{
+    display:none;
+}
+
+#insiders:not(:checked) ~ .example[data-tags~="insiders"]{
+    display:none;
+}
+
+#simple:not(:checked) ~ .example[data-tags~="simple"]{
+    display:none;
+}
+
+#integration:not(:checked) ~ .example[data-tags~="integration"]{
+    display:none;
+}
+
+#blog:not(:checked) ~ .example[data-tags~="blog"]{
+    display:none;
+}
+
+#fonts:not(:checked) ~ .example[data-tags~="fonts"] {
+    display: none;
+}
