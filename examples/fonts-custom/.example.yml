@@ -1,9 +1,9 @@
 example:
-  name: Adding an RSS-feed to your blog
+  name: Using a custom font
   tags:
     - public        # works without Insiders
-    - blog          # functionality demonstrated
-    - integration   # demonstrates integration, use of other plugins
+    - fonts         # functionality demonstrated
+    - simple        # uses only Material functionality
   authors:
     alexvoss:
       name: Alex Voss

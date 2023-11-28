@@ -11,14 +11,36 @@
       <br/>
     {% endfor %}
     {% for example in examples %}
-      <div class="admonition note example" 
-        data-tags="{{ ' '.join(example['tags'])}}">
-        <div style="float:right;padding-left:1em">
-          {{ ', '.join(example['tags']) }}
-        </div>
-        <a href="/{example['path']}">{{ example['name']}}</a>
-        <div class="author">
-        </div>
+      <div class="admonition example" 
+           data-tags="{{ ' '.join(example['tags'])}}">        
+        <div class="admonition-title">
+          <div class="taglist">
+            {{ ', '.join(example['tags']) }}
+          </div>
+          <a href="/{{example['path']}}">{{ example['name']}}</a>
+        </div>        
+        <p>
+          {% if 'description' in example %}
+            {{ example['description'] }}
+          {% else %}
+            Missing description.
+          {% endif %}
+        </p>
+        {% if 'authors' in example %}
+          {% for author in example['authors'] %}
+            {% set author = example['authors'][author] %}
+            <div class="author">
+                {% if 'name' in author %}
+                  {% if 'ghuser' in author %}
+                    by <a href="https://github.com/{{ author['ghuser']}}"
+                    target="_new">{{ author['name'] }}</a>
+                  {% else %}
+                    by {{ author['name'] }}
+                  {% endif %}
+                {% endif %}
+            </div>
+          {% endfor %}
+        {% endif %}
       </div>
     {% endfor %}
   </div>

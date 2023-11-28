@@ -1,3 +1,6 @@
+.md-typeset .author {
+    text-align: right;
+}
 .md-typeset .filters {
     background-color: lightgray;
 }
@@ -13,6 +16,11 @@
     padding-right: 5px;
     color: white;
     font-size: .64rem;
+}
+
+.md-typeset .taglist {
+    float:right;
+    padding-left:1em;
 }
 
 .md-typeset input:not(:checked) + .taglabel {

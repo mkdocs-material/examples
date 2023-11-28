@@ -42,7 +42,7 @@ tags = [
 # The list of examples.
 examples = []
 
-def on_pre_build(_: MkDocsConfig):
+def on_pre_build(config: MkDocsConfig):
     """
     Populate the module variables examples and tags with the data from all 
     the `.example.y(a)ml` files we can find in `examples/`.
