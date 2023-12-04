@@ -71,7 +71,7 @@ def on_post_build(config: MkDocsConfig):
                     path = os.path.join(path, "**")
 
                 # Find all files recursively and add them to the archive
-                for file in iglob(path, recursive = True):
+                for file in iglob(path, recursive = True, include_hidden = True):
                     log.debug(f"+ '{file}'")
                     f.write(file, os.path.join(
                         example, os.path.relpath(file, base)
