@@ -50,10 +50,21 @@ plugins:
       cache: false
       projects_dir: examples
       projects_config_transform: !!python/name:examples.transform
+      log_level: warn
 
 # Hooks
 hooks:
   - hooks/archive.py
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+    absolute_links: warn
+  links:
+    not_found: warn
+    absolute_links: warn
+    unrecognized_links: warn
 
 # Customization
 extra:
