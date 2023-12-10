@@ -50,7 +50,7 @@ plugins:
       cache: false
       projects_dir: examples
       projects_config_transform: !!python/name:examples.transform
-      log_level: warn
+      log_level: info
 
 # Hooks
 hooks:

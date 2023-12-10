@@ -22,15 +22,17 @@ import os
 import posixpath
 
 from mergedeep import merge
-from mkdocs.config.defaults import MkDocsConfig
+from material.plugins.projects.structure import Project
 
 # -----------------------------------------------------------------------------
 # Functions
 # -----------------------------------------------------------------------------
 
 # Transform project configuration
-def transform(project: MkDocsConfig, config: MkDocsConfig):
-    base = os.path.dirname(project.config_file_path)
+def transform(project: Project, root: Project):
+    config = root.config
+
+    base = os.path.dirname(project.config.config_file_path)
     name = os.path.basename(base)
 
     # Determine path of examples relative to root
@@ -38,23 +40,20 @@ def transform(project: MkDocsConfig, config: MkDocsConfig):
     path = os.path.relpath(base, root)
 
     # Inherit settings for repository
-    project.repo_name = config.repo_name
-    project.repo_url  = f"{config.repo_url}/tree/master/{path}"
+    project.config.repo_name = config.repo_name
+    project.config.repo_url  = f"{config.repo_url}/tree/master/{path}"
 
     # Inherit settings for site URL and edit URI
-    project.site_url = posixpath.join(config.site_url, name, "")
-    project.edit_uri = f"edit/master/examples/{name}/docs/"
-
-    # Inherit settings for copyright
-    project.copyright = config.copyright
+    project.config.site_url = posixpath.join(config.site_url, name, "")
+    project.config.edit_uri = f"edit/master/examples/{name}/docs/"
 
     # Inherit settings for theme
-    if "features" in project.theme:
-        project.theme["features"].extend(config.theme["features"])
+    if "features" in project.config.theme:
+        project.config.theme["features"].extend(config.theme["features"])
     else:
-        project.theme["features"] = config.theme["features"]
+        project.config.theme["features"] = config.theme["features"]
 
-    if "icon" in project.theme:
-        merge(project.theme["icon"], config.theme["icon"])
+    if "icon" in project.config.theme:
+        merge(project.config.theme["icon"], config.theme["icon"])
     else:
-        project.theme["icon"] = config.theme["icon"]
+        project.config.theme["icon"] = config.theme["icon"]
