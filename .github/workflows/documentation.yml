@@ -25,6 +25,7 @@ on:
       - master
 
 env:
+  CONCURRENCY: 1
   PYTHON_VERSION: 3.x
 
 permissions:

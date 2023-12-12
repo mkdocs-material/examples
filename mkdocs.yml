@@ -47,7 +47,7 @@ theme:
 # Plugins
 plugins:
   - projects:
-      cache: false
+      concurrency: !ENV CONCURRENCY
       projects_dir: examples
       projects_config_transform: !!python/name:examples.transform
       log_level: info
