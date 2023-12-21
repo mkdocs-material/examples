@@ -34,3 +34,8 @@ theme:
 plugins:
   - search
   - blog
+
+nav:
+  - Home: index.md
+  - Blog:
+    - blog/index.md
