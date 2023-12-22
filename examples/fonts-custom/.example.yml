@@ -1,0 +1,11 @@
+example:
+  name: Using a custom font
+  tags:
+    - public        # works without Insiders
+    - fonts         # functionality demonstrated
+    - simple        # uses only Material functionality
+  authors:
+    alexvoss:
+      name: Alex Voss
+      description: Collaborator
+      ghuser: alexvoss

@@ -1,3 +1,8 @@
+---
+tags:
+  - colors
+  - public
+---
 # Using custom colors
 
 This example shows how to set [custom colors] with [additional CSS].

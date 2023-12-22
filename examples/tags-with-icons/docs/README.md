@@ -1,3 +1,8 @@
+---
+tags:
+  - public
+  - tags
+---
 # Using tags with icons
 
 This example shows how to use [tags with icons] and includes the following pages:

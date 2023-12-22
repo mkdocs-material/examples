@@ -1,3 +1,8 @@
+---
+tags: 
+  - public
+  - "page_status"
+---
 # Using page status
 
 This example shows how to add a [page status] to a page. This works for section
