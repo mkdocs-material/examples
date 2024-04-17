@@ -7,4 +7,4 @@ tags:
 
 ## Tags
 
-<!-- @tags { scope: true } -->
+<!-- material/tags { scope: true } -->

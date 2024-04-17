@@ -1,3 +1,3 @@
 # Tags
 
-<!-- @tags { include: [Section] } -->
+<!-- material/tags { include: [Section] } -->
