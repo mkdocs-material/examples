@@ -1,7 +1,7 @@
 # Using built-in browser fonts
 
-This example shows what happens when auto-loading of fonts from Google
-is turned off and no other fonts are configured:
+This example shows what happens when you turn off auto-loading of fonts from
+Google and no other fonts are configured:
 
 regular - __bold__ - *italic* - __*bold italic*__ - `code`
 
@@ -16,16 +16,16 @@ is an option for you.
 Turn off the default use of Roboto fonts loaded from Google Fonts in
 your `mkdocs.ym`:
 
-```
+```yaml
 theme:
   font: false
 ```
 
 The fonts used are those that are built into the web browser.
 Material for MkDocs provides sensible defaults that should work in all
-common browsers. 
+common browsers.
 
-## (Dis-)Advantages
+## (Dis-)advantages
 
 Turning off Google Fonts means that your website will not cause
 browsers to make any font requests to Google, improving privacy.
@@ -42,8 +42,8 @@ of your website as different browsers will choose different fonts.
     The [privacy plugin] provided by Material for MkDocs provides a
     best-of-both-worlds solution in that it allows you to specify
     fonts available on Google Fonts directly in your `mkdocs.yml`.
-    It automatically downloads the ones used and includes them in 
-    your website so they are served up by your own server. 
+    It automatically downloads the ones used and includes them in
+    your website so they are served up by your own server.
     No need for a custom stylesheet.
 
 An alternative is to turn off the use of Roboto from Google Fonts and
