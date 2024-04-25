@@ -8,3 +8,8 @@ to be sure.
   [sponsors]: https://squidfunk.github.io/mkdocs-material/insiders/
   [available features]: https://squidfunk.github.io/mkdocs-material/insiders/#whats-in-for-me
 
+
+* Fonts
+    - [Auto-Loading from Google Fonts](fonts-auto)
+    - [Builtin fonts](fonts-builtin)
+    - [Custom fonts](fonts-custom)
