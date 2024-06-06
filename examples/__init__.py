@@ -45,7 +45,7 @@ def transform(project: Project, root: Project):
 
     # Inherit settings for site URL and edit URI
     project.config.site_url = posixpath.join(config.site_url, name, "")
-    project.config.edit_uri = f"edit/master/examples/{name}/docs/"
+    project.config.edit_uri = f"{config.repo_url}/edit/master/{path}/docs/"
 
     # Inherit settings for theme
     if "features" in project.config.theme:
