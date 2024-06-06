@@ -2,37 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/blog/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/blog/2023/10/11/my-first-blog-post/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/blog/2023/10/12/a-second-post/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/blog/archive/2023/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/blog/category/hello/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mkdocs-material.github.io/examples/blog-update/blog/category/meta/</loc>
-         <lastmod>2023-12-22</lastmod>
+         <lastmod>2024-06-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
