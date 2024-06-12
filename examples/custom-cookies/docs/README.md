@@ -1,3 +1,8 @@
+---
+tags:
+  - insiders
+  - privacy
+---
 # Adding a custom cookie
 
 This example shows how to add a [custom cookie] to the [cookie consent] and

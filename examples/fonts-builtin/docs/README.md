@@ -1,3 +1,14 @@
+---
+tags:
+  - public
+  - fonts
+authors:
+  alexvoss:
+    name: Alex Voss
+    description: Collaborator
+    ghuser: alexvoss
+---
+
 # Using built-in browser fonts
 
 This example shows what happens when auto-loading of fonts from Google
