@@ -39,10 +39,12 @@ plugins:
   - rss: # https://pypi.org/project/mkdocs-rss-plugin/
       match_path: blog/posts/.*
       date_from_meta:
-        as_creation: date
-        as_update: false
-        date_format: "%Y-%m-%d" # specify if the RSS plugin does
-                                # not understand the format you use
+              as_creation: "date" # means from page.meta.date
+              as_update: "git" # means from git log
+              datetime_format: "%Y-%m-%d %H:%M"
+              default_time: "09:30"
+              default_timezone: Europe/Berlin
+
       categories:
         - categories
         - tags
