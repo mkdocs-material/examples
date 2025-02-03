@@ -39,8 +39,7 @@ theme:
 # Plugins
 plugins:
   - search
-  - tags:
-      tags_file: demo/tags.md
+  - tags
 
 # Extra configuration
 extra:
