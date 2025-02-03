@@ -1,4 +1,4 @@
-# Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
+# Copyright (c) 2016-2025 Martin Donath <martin.donath@squidfunk.com>
 #                         Alex Voss <alex@corealisation.com>
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -28,7 +28,7 @@ site_name: Using built-in browser fonts
 site_author: Alex Voss
 
 # Copyright
-copyright: Copyright &copy; 2016 - 2023 Alex Voss and Martin Donath
+copyright: Copyright &copy; 2016 - 2025 Alex Voss and Martin Donath
 
 # Theme
 theme:
