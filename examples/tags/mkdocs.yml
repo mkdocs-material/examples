@@ -34,9 +34,8 @@ theme:
 # Plugins
 plugins:
   - search
-  - tags:
-      tags_file: demo/tags.md
-
+  - tags
+  
 # Markdown extensions
 markdown_extensions:
   - attr_list
