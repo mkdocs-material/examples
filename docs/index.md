@@ -1,4 +1,4 @@
-# Examples
+# Examples aaaaaa
 
 This project lists all options that are supported by Material for MkDocs and
 can be used as a basis for new projects or reproductions. Note that some options
